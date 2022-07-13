@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ex.quiz.Activitys.CategoriasActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical"
+    android:background="@drawable/gradient_bg">
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="CATEGORIAS"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/linear_borda_categorias"
+
+        android:layout_marginTop="10dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxContinente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continente"
+
+            />
+
+        <CheckBox
+        android:id="@+id/checkBoxIdioma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Idiomas" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCapital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Capitais" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBandeira"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bandeiras" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPopulacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Populacao" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mapa" />
+
+    <CheckBox
+        android:id="@+id/checkBoxArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Área" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMoeda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Moeda"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxEmblema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brasão"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxCidades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cidades"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="QUANTIDADE DE PERGUNTAS"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"/>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/linear_borda_categorias"
+
+        android:layout_marginTop="10dp">
+
+
+    <RadioButton
+        android:id="@+id/radioButton15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="15"
+        android:onClick="clickRb15"/>
+
+    <RadioButton
+        android:id="@+id/radioButton30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:onClick="clickRb30"/>
+
+    <RadioButton
+        android:id="@+id/radioButton50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="50"
+        android:onClick="clickRb50"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="CONFIGURAÇÕES"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"/>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/linear_borda_categorias"
+
+        android:layout_marginTop="10dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableLayoutPARAMETROS">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tableRowSons">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sons Durante o jogo:"
+                    android:textColor="@color/black"/>
+
+
+                <RadioButton
+                    android:id="@+id/radioSonsSim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"
+                    android:onClick="clickSonsSim"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioSonsNao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Não"
+                    android:onClick="clickSonsNao"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tableRowVibra">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Vibrar:"
+                    android:textColor="@color/black"/>
+
+
+                <RadioButton
+                    android:id="@+id/radioVibraSim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"
+                    android:onClick="clickVibraSim"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioVibraNao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Não"
+                    android:onClick="clickVibraNao"
+                    />
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/buttonGravar"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:onClick="voltar"
+        android:text="Voltar"
+        android:background="@drawable/borda_arredondada"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>

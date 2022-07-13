@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Geo grafando</string>
+    <string name="action_settings">Settings</string>
+    <string name="timerVal">00:00</string>
+    <string name="admob_insterstitial_activity_final_jogo">ca-app-pub-4422494564446014/3755598367</string>
+    <string name="admob_banner_activity_main">ca-app-pub-4422494564446014/3025226467</string>
+    <string name="admob_banner_activity_jogo">ca-app-pub-4422494564446014/8687766629</string>
+    <string name="admob_banner_activity_final_jogo">ca-app-pub-4422494564446014/1762092161</string>
+    <string name="admob_reward_ad_activity_jogo">ca-app-pub-4422494564446014/4864071688</string>
+    <string name="admob_interstitial_activity_jogo">ca-app-pub-4422494564446014/1155727122</string>
+
+
+    <string name="admob_banner_teste">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_reward_video_teste">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="admob_interstitial_teste">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string-array name="title_tab">
+        <item>GERAL</item>
+        <item>CATEGORIAS</item>
+        <item>PARTIDAS</item>
+    </string-array>
+</resources>

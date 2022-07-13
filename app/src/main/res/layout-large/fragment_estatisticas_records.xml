@@ -1,0 +1,819 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/texView15Perguntas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Partidas com 15 perguntas"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/average_sans"
+            android:textSize="22dp"
+            android:textColor="@color/label_records_titulos"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:id="@+id/linear15"
+            android:layout_height="wrap_content"
+            android:layout_width="420dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutPartidas15">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+
+                    android:id="@+id/tableRowPartidasJogadas15">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasJogadasGeral"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Partidas Iniciadas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasJogadas15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"
+                        android:textSize="22dp"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasVencidasGeral"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Partidas Vencidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasVencidas15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualVitoriasGeral"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Percentual de Vitórias           "/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualVitoriasValor15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutPontos15">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+
+                    <TextView
+                        android:id="@+id/texViewMelhorPontuacao"
+                        android:layout_width="230dp"
+
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Melhor Pontuação                  "
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:id="@+id/texViewTotalMelhorPontuacao15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+
+                    <TextView
+                        android:id="@+id/texViewMediaPontos"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Média de Pondos"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:id="@+id/texViewTotalMediaPontos15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutSequencia15">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewSequenciaAtual"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Sequencia Atual de Vitórias"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadSequenciaAtual15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewMaiorSequencia"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Maior Sequência de Vitórias"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadeMaiorSequencia15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasSemErros"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Vitórias sem Erros"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasSemErros15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/texView30Perguntas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Partidas com 30 perguntas"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/average_sans"
+            android:textSize="22dp"
+            android:textColor="@color/label_records_titulos"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="60dp"
+            android:textStyle="bold"/>
+
+
+        <LinearLayout
+            android:id="@+id/linear30"
+            android:layout_height="wrap_content"
+            android:layout_width="420dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutPartidas30">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPartidasJogadas30">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasJogadasGeral30"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Partidas Iniciadas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasJogadas30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasVencidasGeral30"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Partidas Vencidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasVencidas30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualVitoriasGeral30"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Percentual de Vitórias           "/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualVitoriasValor30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutPontos30">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewMelhorPontuacao30"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Melhor Pontuação                  "/>
+
+
+                    <TextView
+                        android:id="@+id/texViewTotalMelhorPontuacao30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewMediaPontos30"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Média de Pondos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewTotalMediaPontos30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutSequencia30">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewSequenciaAtual30"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Sequencia Atual de Vitórias"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadSequenciaAtual30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewMaiorSequencia30"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Maior Sequência de Vitórias"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadeMaiorSequencia30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasSemErros30"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Vitórias sem Erros"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasSemErros30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/texView50Perguntas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Partidas com 50 perguntas"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/average_sans"
+            android:textSize="22dp"
+            android:textColor="@color/label_records_titulos"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="60dp"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:id="@+id/linear50"
+            android:layout_height="wrap_content"
+            android:layout_width="420dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutPartidas50">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPartidasJogadas50">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasJogadasGeral50"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Partidas Iniciadas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasJogadas50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasVencidasGeral50"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Partidas Vencidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasVencidas50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualVitoriasGeral50"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Percentual de Vitórias           "/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualVitoriasValor50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/tableLayoutPontos50">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewMelhorPontuacao50"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Melhor Pontuação                  "/>
+
+
+                    <TextView
+                        android:id="@+id/texViewTotalMelhorPontuacao50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewMediaPontos50"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Média de Pondos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewTotalMediaPontos50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutSequencia50">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewSequenciaAtual50"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Sequencia Atual de Vitórias"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadSequenciaAtual50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewMaiorSequencia50"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Maior Sequência de Vitórias"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadeMaiorSequencia50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPartidasSemErros50"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="22dp"
+                        android:text="Vitórias sem Erros"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePartidasSemErros50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:textSize="22dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

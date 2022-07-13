@@ -1,0 +1,31 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item >
+
+        <shape
+
+            android:shape="rectangle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            >
+
+            <solid android:color="@color/quadro_pergunta"/>
+
+
+
+            <corners
+                android:bottomLeftRadius="290dp"
+                android:bottomRightRadius="290dp"
+
+                >
+
+            </corners>
+
+        </shape>
+
+
+
+    </item>
+</layer-list>

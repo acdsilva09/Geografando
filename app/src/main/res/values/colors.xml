@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#32CD32</color>
+    <color name="blue">#3F41B5</color>
+    <color name="backgorund_blue">#0E5BF3</color>
+    <color name="black">#060709</color>
+    <color name="grey">#858482</color>
+    <color name="green_new_game">#60B833</color>
+    <color name="white">#E5E9E5</color>
+    <color name="label_records_titulos">#504F4E</color>
+    <color name="label_records_valor">#000000</color>
+    <color name="quadro_pergunta">#2bcc6f</color>
+    <color name="yellow">#FFC107</color>
+</resources>

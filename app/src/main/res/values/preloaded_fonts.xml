@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/average_sans</item>
+        <item>@font/bungee</item>
+        <item>@font/luckiest_guy</item>
+        <item>@font/playfair_display</item>
+        <item>@font/sumana</item>
+    </array>
+</resources>

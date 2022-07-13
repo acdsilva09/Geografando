@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ex.quiz.Activitys.FinalJogo"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/gradient_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal|center_vertical"
+        >
+
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="600dp"
+        android:background="@drawable/score"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textViewResult"
+            style="@android:style/Widget.DeviceDefault.Light.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/luckiest_guy"
+            android:text="Fim \nde jogo!"
+
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="70sp"
+
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="284dp" />
+
+        <TextView
+            android:id="@+id/textPontuacaoFoi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/luckiest_guy"
+            android:gravity="center_horizontal"
+            android:text="pontuação"
+
+            android:textColor="@color/blue"
+            android:textSize="50dp"
+
+
+            />
+
+        <TextView
+            android:id="@+id/textPontos"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/score_box"
+            android:fontFamily="@font/luckiest_guy"
+            android:gravity="center"
+            android:text="9.999.999"
+            android:textColor="@color/white"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/textEstatisticaAleatoria"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/luckiest_guy"
+            android:gravity="center"
+            android:textSize="32dp"
+            android:text="xxxxxxxxxx xxxx xx xx x        x  x xxxxxxxx"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonNovoJogo"
+        android:layout_width="400dp"
+        android:layout_height="120dp"
+        android:onClick="jogarNovamente"
+        android:text="Jogar novamente"
+        android:layout_marginTop="5dp"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="341dp"
+        android:textSize="40dp"
+        android:fontFamily="@font/luckiest_guy"
+        android:textColor="@color/white"
+        android:background="@drawable/play"/>
+
+    <Button
+        android:id="@+id/buttonVoltar"
+        android:layout_width="400dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/blank"
+        android:textSize="40dp"
+        android:fontFamily="@font/luckiest_guy"
+        android:onClick="voltar"
+        android:text="Voltar"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="bottom">
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewBannerMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_teste">
+    </com.google.android.gms.ads.AdView>
+    </LinearLayout>
+</LinearLayout>

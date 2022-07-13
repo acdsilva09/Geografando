@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaContinente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/average_sans"
+            android:gravity="center_horizontal"
+            android:text="Continente"
+            android:textSize="25dp"
+            android:textColor="@color/label_records_titulos"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearContinentes"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasContinente">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasContinente">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasContinente"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Perguntas Respondidas"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp" />
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasContinente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasContinente"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasContinente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasContinente"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasContinente"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaIdiomas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Idiomas"
+            android:fontFamily="@font/average_sans"
+            android:textSize="25dp"
+            android:textColor="@color/label_records_titulos"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="60dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearIdiomas"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias"
+            android:gravity="center_horizontal">
+
+            <TableLayout
+                android:id="@+id/tableLayoutEstatisticasIdiomas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:id="@+id/tableRowPerguntasRespondidasIdiomas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasIdiomas"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Perguntas Respondidas"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp" />
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasIdiomas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasIdiomas"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Respostas Certas"
+
+
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp" />
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasIdiomas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasIdiomas"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Percentual de acertos"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp" />
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasIdiomas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"
+                        android:textColor="@color/black" />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Capitais"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/average_sans"
+            android:textSize="25dp"
+            android:textColor="@color/label_records_titulos"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearCapitais"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasCapitais">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasCapitais">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasCapitais"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Perguntas Respondidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasCapitais"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasCapitais"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasCapitais"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasCapitais"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasCapitais"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaBandeiras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Bandeiras"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/label_records_titulos"
+            android:fontFamily="@font/average_sans"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearBandeiras"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasBandeiras">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasBandeiras">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasBandeiras"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Perguntas Respondidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasBandeiras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasBandeiras"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasBandeiras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasBandeiras"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasBandeiras"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaPopulacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="População"
+            android:textColor="@color/label_records_titulos"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/average_sans"
+            android:textSize="25dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearPopulacao"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasPopulacao">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasPopulacao">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasPopulacao"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Perguntas Respondidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasPopulacao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasPopulacao"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasPopulacao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasPopulacao"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasPopulacao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Mapa"
+            android:textColor="@color/label_records_titulos"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/average_sans"
+            android:textSize="25dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/linearMapas"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasMapa">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasMapa">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasMapa"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Perguntas Respondidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasMapa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasMapa"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasMapa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasMapa"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasMapa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Área"
+            android:textColor="@color/label_records_titulos"
+            android:fontFamily="@font/average_sans"
+            android:textSize="25dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearArea"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasArea">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasArea">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasArea"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Perguntas Respondidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasArea"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasArea"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaMoeda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Moeda"
+            android:textColor="@color/label_records_titulos"
+            android:layout_marginTop="60dp"
+            android:textSize="25dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/average_sans"
+
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearMoeda"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasMoeda">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasMoeda">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasMoeda"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Perguntas Respondidas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasMoeda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasMoeda"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasMoeda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasMoeda"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasMoeda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaEmblema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/average_sans"
+            android:gravity="center_horizontal"
+            android:text="Brasão"
+            android:textSize="25dp"
+            android:textColor="@color/label_records_titulos"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearEmblema"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasEmblema">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasEmblema">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasEmblema"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Perguntas Respondidas"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp" />
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasEmblema"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasEmblema"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasEmblema"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasEmblema"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasEmblema"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textViewTitleEstatisticaCidades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/average_sans"
+            android:gravity="center_horizontal"
+            android:text="Cidades"
+            android:textSize="25dp"
+            android:textColor="@color/label_records_titulos"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearCidades"
+            android:layout_width="500dp"
+            android:layout_height="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/linear_borda_categorias">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayoutEstatisticasCidades">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tableRowPerguntasRespondidasCidades">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasRespondidasCidades"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Perguntas Respondidas"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp" />
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasRespondidasCidades"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/texViewPerguntasCertasCidades"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Respostas Certas"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewQuantidadePerguntasCertasCidades"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/texViewPercentualPeguntasCertasCidades"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:textColor="@color/label_records_titulos"
+                        android:textSize="25dp"
+                        android:text="Percentual de acertos"/>
+
+
+                    <TextView
+                        android:id="@+id/texViewPercentualValorPerguntasCertasCidades"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="45dp"
+                        android:text="00"/>
+
+                </TableRow>
+
+
+            </TableLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
