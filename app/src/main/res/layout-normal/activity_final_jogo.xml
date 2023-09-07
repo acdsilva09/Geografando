@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ex.quiz.Activitys.FinalJogo"
+    tools:context=".Activitys.FinalJogo"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/gradient_bg">
@@ -128,7 +128,7 @@
         android:layout_alignParentBottom="true"
 
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_teste">
+        ads:adUnitId="@string/admob_banner_activity_final_jogo">
     </com.google.android.gms.ads.AdView>
     </LinearLayout>
 </LinearLayout>

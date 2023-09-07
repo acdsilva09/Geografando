@@ -119,7 +119,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginTop="00dp"
             ads:adSize="BANNER"
-            ads:adUnitId="@string/admob_banner_teste">
+            ads:adUnitId="@string/admob_banner_activity_main">
         </com.google.android.gms.ads.AdView>
 
     </LinearLayout>

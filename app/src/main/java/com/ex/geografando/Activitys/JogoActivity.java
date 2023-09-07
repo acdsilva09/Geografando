@@ -175,7 +175,7 @@ public class JogoActivity extends AppCompatActivity {
     public void onRequestVideoAd()    {
 
         AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917",
+        RewardedAd.load(this, String.valueOf(R.string.admob_reward_ad_activity_jogo),
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
@@ -1162,7 +1162,7 @@ public class JogoActivity extends AppCompatActivity {
 
         AdRequest thisAdRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", thisAdRequest,
+        InterstitialAd.load(this, String.valueOf(R.string.admob_interstitial_activity_jogo), thisAdRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

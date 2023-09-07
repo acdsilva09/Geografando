@@ -116,7 +116,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="00dp"
             app:adSize="BANNER"
-            app:adUnitId="@string/admob_banner_teste"></com.google.android.gms.ads.AdView>
+            app:adUnitId="@string/admob_banner_activity_main"></com.google.android.gms.ads.AdView>
 
     </LinearLayout>
 

@@ -345,7 +345,7 @@ public class FinalJogo extends AppCompatActivity {
 
         AdRequest thisAdRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", thisAdRequest,
+        InterstitialAd.load(this, String.valueOf(R.string.admob_insterstitial_activity_final_jogo), thisAdRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

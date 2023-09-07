@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadAdMob() {
         mAdView = new AdView(this);
-        mAdView.setAdUnitId(getString(R.string.admob_banner_teste));
+        mAdView.setAdUnitId(getString(R.string.admob_banner_activity_main));
         mAdView.loadAd(new AdRequest.Builder().build());
     }
 
