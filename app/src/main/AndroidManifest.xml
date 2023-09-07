@@ -29,7 +29,9 @@
         <activity android:name="com.ex.geografando.Activitys.CategoriasActivity" />
         <activity android:name="com.ex.geografando.Activitys.RecordsActivity" />
         <activity android:name="com.ex.geografando.Activitys.JogoActivity" />
+        <activity android:name="com.ex.geografando.Activitys.MainActivity"/>
         <activity android:name="com.ex.geografando.Activitys.InicioActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,5 +1,7 @@
 package com.ex.geografando.Activitys;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -7,9 +9,11 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -35,14 +39,16 @@ import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
-import com.google.android.gms.ads.rewarded.RewardedAdCallback;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.text.NumberFormat;
@@ -73,6 +79,7 @@ public class JogoActivity extends AppCompatActivity {
     private long timeLeft = 31000;
     private RewardedAd mRewardedAd;
     private MediaPlayer player;
+    private final String TAG = "MainActivity";
 
 
     @Override
@@ -133,24 +140,7 @@ public class JogoActivity extends AppCompatActivity {
 
         loadAdMob();
 
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial_teste));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mInterstitialAd.setAdListener(new AdListener(){
-            @Override
-            public void onAdClosed() {
-                startActivity(new Intent(com.ex.geografando.Activitys.JogoActivity.this, MainActivity.class));
-                finishAffinity();
-            }
-        });
-
-
         onRequestVideoAd();
-
-
-
-
     }
 
     private void playRespostaCerta() {
@@ -183,61 +173,83 @@ public class JogoActivity extends AppCompatActivity {
     }
 
     public void onRequestVideoAd()    {
-        mRewardedAd = new RewardedAd(this,getString(R.string.admob_reward_video_teste));
-        RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback(){
-            @Override
-            public void onRewardedAdLoaded()
-            {
-                super.onRewardedAdLoaded();
 
-            }
+        AdRequest adRequest = new AdRequest.Builder().build();
+        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917",
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+                        Log.d(TAG, loadAdError.toString());
+                        mRewardedAd = null;
+                    }
 
-            @Override
-            public void onRewardedAdFailedToLoad(LoadAdError loadAdError)
-            {
-                super.onRewardedAdFailedToLoad(loadAdError);
-
-            }
-
-        };
-
-        mRewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd ad) {
+                        mRewardedAd = ad;
+                        Log.d(TAG, "Ad was loaded.");
+                    }
+                });
     }
 
+
     public void onShowRewardedAd(){
-        if(!mRewardedAd.isLoaded())
-        {
-            Toast.makeText( com.ex.geografando.Activitys.JogoActivity.this, "Falha.\nTente Novamente", Toast.LENGTH_SHORT).show();
-            onRequestVideoAd();
-            startTimer();
-            return;
-        }
-
-        RewardedAdCallback adCallback = new RewardedAdCallback() {
+        mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
             @Override
-            public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                limpaAlternativaErrada();
+            public void onAdClicked() {
+                // Called when a click is recorded for an ad.
+                Log.d(TAG, "Ad was clicked.");
             }
 
             @Override
-            public void onRewardedAdOpened() {
-                super.onRewardedAdOpened();
-            }
-
-            @Override
-            public void onRewardedAdClosed() {
-                super.onRewardedAdClosed();
+            public void onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                // Set the ad reference to null so you don't show the ad a second time.
+                Log.d(TAG, "Ad dismissed fullscreen content.");
+                mRewardedAd = null;
                 startTimer();
                 onRequestVideoAd();
             }
 
             @Override
-            public void onRewardedAdFailedToShow(AdError adError) {
-                super.onRewardedAdFailedToShow(adError);
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                // Called when ad fails to show.
+                Log.e(TAG, "Ad failed to show fullscreen content.");
+                mRewardedAd = null;
             }
-        };
 
-        mRewardedAd.show(com.ex.geografando.Activitys.JogoActivity.this, adCallback);
+            @Override
+            public void onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(TAG, "Ad recorded an impression.");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(TAG, "Ad showed fullscreen content.");
+            }
+        });
+
+
+
+        if(mRewardedAd== null)
+        {
+            Toast.makeText( com.ex.geografando.Activitys.JogoActivity.this, "Falha.\nTente Novamente", Toast.LENGTH_SHORT).show();
+            onRequestVideoAd();
+            startTimer();
+            return;
+        }else{
+            mRewardedAd.show(com.ex.geografando.Activitys.JogoActivity.this, new OnUserEarnedRewardListener() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                    // Handle the reward.
+                    limpaAlternativaErrada();
+                }
+            });
+        }
+
+
     }
 
     private boolean consultaParametroVibrar() {
@@ -328,14 +340,12 @@ public class JogoActivity extends AppCompatActivity {
         partida.setAjudasRestantes(qtdDicas);
         daoPartida.inserePartida(partida);
     }
-
     private int quantidadePerguntas() {
         int qtd;
         CategoriaDAO categoria_dao = new CategoriaDAO(this);
         qtd=categoria_dao.selecaoQtdPerguntas();
         return qtd;
     }
-
     private int quantidadeCategorias() {
         int qtdCategorias=0;
         CategoriaDAO categoria_dao = new CategoriaDAO(this);
@@ -343,13 +353,11 @@ public class JogoActivity extends AppCompatActivity {
 
         return qtdCategorias;
     }
-
     @Override
     protected void onResume(){
         super.onResume();
         escondeNavigationBar();
     }
-
     public void buttonAjuda(View view){
         if(qtdDicas>0&&alternativasDisponiveis>1)
         {
@@ -545,9 +553,6 @@ public class JogoActivity extends AppCompatActivity {
                     numberFormat.format(area)+" Km².");
         }
     }
-
-
-
     private void updatePartida() {
         PartidaDAO dao_partida = new PartidaDAO(this);
        dao_partida.atualizaPartida(codPartida,pontos,listaPerguntas.size());
@@ -584,12 +589,10 @@ public class JogoActivity extends AppCompatActivity {
         return b;
 
     }
-
     private void atualizaAcertosContinente() {
         int i = acertosContinentes.get(paisTemporario.getContinente());
         acertosContinentes.put(paisTemporario.getContinente(),i+1);
     }
-
     private void mostraRespostaCerta() {
         ArrayList<Button> listButtons = new ArrayList<>();
         listButtons.add(buttonAlternativa1);listButtons.add(buttonAlternativa2);listButtons.add(buttonAlternativa3);listButtons.add(buttonAlternativa4);
@@ -746,8 +749,8 @@ public class JogoActivity extends AppCompatActivity {
 
                     stopTimer();
                     gameOver(2);
-                    if(mInterstitialAd.isLoaded()){
-                        mInterstitialAd.show();
+                   if(mInterstitialAd != null){
+                        mInterstitialAd.show(JogoActivity.this);
                     }else {
                         activityOnResume = false;
                         Intent i = new Intent(com.ex.geografando.Activitys.JogoActivity.this, MainActivity.class);
@@ -766,8 +769,6 @@ public class JogoActivity extends AppCompatActivity {
         builder.show();
 
     }
-
-
     public void mostraPergunta(Pergunta pergunta){
 
 
@@ -990,7 +991,6 @@ public class JogoActivity extends AppCompatActivity {
         dao.insereAlternativasDisponiveis(this.buttonAlternativa1.getText(),this.buttonAlternativa2.getText(),
                 this.buttonAlternativa3.getText(),this.buttonAlternativa4.getText());
     }
-
     public void startTimer() {
         countDownTimer = new CountDownTimer(timeLeft,1000) {
             @Override
@@ -1068,12 +1068,10 @@ public class JogoActivity extends AppCompatActivity {
         },2000);
 
     }
-
     private void deletePerguntaTemp() {
         PartidaDAO dao = new PartidaDAO(this);
         dao.deletePerguntaTemp();
     }
-
     public void setEnableFalseButtons(){
         buttonAlternativa1.setEnabled(false);
         buttonAlternativa2.setEnabled(false);
@@ -1099,7 +1097,6 @@ public class JogoActivity extends AppCompatActivity {
         buttonAlternativa1.setVisibility(View.VISIBLE);
 
     }
-
     private ArrayList<String> retornaAlternativas(ArrayList<Alternativa> alternativas) {
 
         ArrayList<String> alternativasListadas = new ArrayList<>();
@@ -1111,8 +1108,6 @@ public class JogoActivity extends AppCompatActivity {
         }
         return alternativasListadas;
     }
-
-
     public void vibrar(){
         if(vibrar) {
             Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -1121,10 +1116,74 @@ public class JogoActivity extends AppCompatActivity {
         }
     }
 
+    private void setInterstitiaCallBack(){
+        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+            @Override
+            public void onAdClicked() {
+                // Called when a click is recorded for an ad.
+                Log.d(TAG, "Ad was clicked.");
+            }
+
+            @Override
+            public void onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                // Set the ad reference to null so you don't show the ad a second time.
+                activityOnResume = false;
+                Intent i = new Intent(com.ex.geografando.Activitys.JogoActivity.this, MainActivity.class);
+                startActivity(i);
+                finishAffinity();
+                Log.d(TAG, "Ad dismissed fullscreen content.");
+                mInterstitialAd = null;
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                // Called when ad fails to show.
+                Log.e(TAG, "Ad failed to show fullscreen content.");
+                mInterstitialAd = null;
+            }
+
+            @Override
+            public void onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(TAG, "Ad recorded an impression.");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(TAG, "Ad showed fullscreen content.");
+            }
+        });
+    }
+
+
     private void loadAdMob() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial_teste));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        AdRequest thisAdRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", thisAdRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        setInterstitiaCallBack();
+                        Log.i(TAG,"onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d(TAG, loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+
+                });
+
+
+
     }
 
 }

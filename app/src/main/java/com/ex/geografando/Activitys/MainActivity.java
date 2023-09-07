@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         consultaCodPartida();
@@ -63,21 +62,13 @@ public class MainActivity extends AppCompatActivity {
         mAdView = findViewById(R.id.adViewBannerMain);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        //mAdView = new AdView(this);
 
-        //mAdView.loadAd(new AdRequest.Builder().build());
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-
-        //loadAdMob();
-
-
-
-
     }
 
 

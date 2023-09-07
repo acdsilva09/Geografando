@@ -19,12 +19,14 @@ public class InicioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inicio);
 
 
+
         escondeNavigationBar();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
                 startActivity(new Intent(com.ex.geografando.Activitys.InicioActivity.this, MainActivity.class));
+
                 finishAffinity();
 
             }

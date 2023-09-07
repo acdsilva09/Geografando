@@ -3,11 +3,13 @@ package com.ex.geografando.Activitys;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,13 +17,17 @@ import com.ex.geografando.DAO.CategoriaDAO;
 import com.ex.geografando.DAO.ConquistasDAO;
 import com.ex.geografando.DAO.PartidaDAO;
 import com.ex.geografando.R;
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -35,6 +41,7 @@ public class FinalJogo extends AppCompatActivity {
 
     private static TextView textPontos, textEstatistica, textResult;
     private int pontos, pontuacaoMaxima, pontuacaoMedia;
+    private final String TAG = "MainActivity";
 
     private ArrayList listaEstatisticasFinalJogo;
     private InterstitialAd mInterstitialAd;
@@ -80,7 +87,7 @@ public class FinalJogo extends AppCompatActivity {
 
         mostraPontuacao();
 
-        loadAdMob();
+        //loadAdMob();
 
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -94,18 +101,7 @@ public class FinalJogo extends AppCompatActivity {
 
 
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial_teste));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
-
-        mInterstitialAd.setAdListener(new AdListener(){
-            @Override
-            public void onAdClosed() {
-                startActivity(new Intent(com.ex.geografando.Activitys.FinalJogo.this, MainActivity.class));
-                finishAffinity();
-            }
-        });
 
 
         verificaDesbloqueioCategoria();
@@ -279,14 +275,7 @@ public class FinalJogo extends AppCompatActivity {
     }
 
     public void voltar(View view){
-
-        if(mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        }else {
-            startActivity(new Intent(com.ex.geografando.Activitys.FinalJogo.this, MainActivity.class));
-            finishAffinity();
-        }
-
+        onBackPressed();
     }
 
     public void jogarNovamente(View view){
@@ -299,10 +288,11 @@ public class FinalJogo extends AppCompatActivity {
 
     }
 
+    @Override
     public void onBackPressed(){ //Botão BACK padrão do android
 
-        if(mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
+        if(mInterstitialAd !=null) {
+            mInterstitialAd.show(FinalJogo.this);
         }else {
             startActivity(new Intent(this, MainActivity.class)); //O efeito ao ser pressionado do botão (no caso abre a activity)
             finishAffinity(); //Método para matar a activity e não deixa-lá indexada na pilhagem
@@ -310,13 +300,74 @@ public class FinalJogo extends AppCompatActivity {
         return;
     }
 
+    private void setInterstitiaCallBack(){
+        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+            @Override
+            public void onAdClicked() {
+                // Called when a click is recorded for an ad.
+                Log.d(TAG, "Ad was clicked.");
+            }
 
-    private void loadAdMob() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial_teste));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            @Override
+            public void onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                // Set the ad reference to null so you don't show the ad a second time.
+                Intent i = new Intent(com.ex.geografando.Activitys.FinalJogo.this, MainActivity.class);
+                startActivity(i);
+                finishAffinity();
+                Log.d(TAG, "Ad dismissed fullscreen content.");
+                mInterstitialAd = null;
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                // Called when ad fails to show.
+                Log.e(TAG, "Ad failed to show fullscreen content.");
+                mInterstitialAd = null;
+            }
+
+            @Override
+            public void onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(TAG, "Ad recorded an impression.");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(TAG, "Ad showed fullscreen content.");
+            }
+        });
     }
 
+
+    private void loadAdMob() {
+
+        AdRequest thisAdRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", thisAdRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        setInterstitiaCallBack();
+                        Log.i(TAG,"onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d(TAG, loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+
+                });
+
+
+
+    }
 
 
 }
