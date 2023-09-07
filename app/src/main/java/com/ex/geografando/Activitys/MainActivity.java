@@ -1,7 +1,10 @@
 package com.ex.geografando.Activitys;
 
+import static java.security.AccessController.getContext;
+
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ex.geografando.DAO.CategoriaDAO;
+import com.ex.geografando.DAO.ConquistasDAO;
 import com.ex.geografando.DAO.PartidaDAO;
 import com.ex.geografando.Model.Partida;
 import com.ex.geografando.R;
@@ -43,11 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         buttonJogar = (Button) findViewById(R.id.buttonJogar);
         buttonRecords = (Button) findViewById(R.id.buttonRecords);
         buttonCategorias = (Button) findViewById(R.id.buttonCategorias);
         buttonConquistas = (Button) findViewById(R.id.buttonConquistas);
         buttonSair = (Button) findViewById(R.id.buttonSair);
+
+
+
+        verificaDesbloqueioCategoriaPendente();
+        verificaDesbloqueioConquistaPendente();
 
 
 
@@ -71,9 +81,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void verificaDesbloqueioCategoriaPendente() {
+        CategoriaDAO dao = new CategoriaDAO(this);
+        if(dao.verificaDesbloqueioCategoriaPendente()==1){
+            buttonCategorias.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.mark30,0);
+        }
+    }
 
 
-
+    private void verificaDesbloqueioConquistaPendente() {
+        ConquistasDAO dao = new ConquistasDAO(this);
+        if(dao.verificaDesbloqueioConquistaPendente()==1){
+            buttonConquistas.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.mark30,0);
+        }
+    }
 
 
     public void onClickButtonJogar(View view){

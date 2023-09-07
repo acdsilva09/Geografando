@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class Conexao extends SQLiteOpenHelper {
 
     private static final String banco = "quiz";
-    private static final int version =105;
+    private static final int version =111;
 
     public Conexao(Context context) {
         super(context, banco, null, version);
@@ -34,6 +34,7 @@ public class Conexao extends SQLiteOpenHelper {
         criarTabelaConquistasSemCategorias(db);
         criarTabelaAcertosContinentes(db);
         criaTabelaHabilitaQtdPerguntas(db);
+        criaTabelaIdiomas(db);
 
         popularTabelaConquistas(db);
         popularTabelaSequenciaVitorias(db);
@@ -49,6 +50,7 @@ public class Conexao extends SQLiteOpenHelper {
         popularTabelaConquistasSemCategoria(db);
         popularTabelaAcertosContinenes(db);
         popularTabelaHabilitaQtdPerguntas(db);
+        popularTabelaIdiomas(db);
     }
 
 
@@ -79,10 +81,16 @@ public class Conexao extends SQLiteOpenHelper {
                 ")");
     }
     private void criarTabelaParametros(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `parametros` (\n" +
+
+        db.execSQL("DROP TABLE `parametros`");
+
+        db.execSQL("CREATE TABLE `parametros` (\n" +
                 "  `ID` int(1) NOT NULL DEFAULT '0',\n" +
                 "  `VIBRAR` int(1) DEFAULT NULL,\n" +
                 "  `SONS` int(1) DEFAULT NULL,\n" +
+                "  `IDIOMA` int(1) DEFAULT NULL,\n" +
+                "  `CONQUISTADESBLOQUEADA` int(1) DEFAULT NULL,\n" +
+                "  `CATEGORIADESBLOQUEADA` int(1) DEFAULT NULL,\n" +
                 "  PRIMARY KEY (`ID`)\n" +
                 ")");
     }
@@ -241,8 +249,16 @@ public class Conexao extends SQLiteOpenHelper {
                 ")");
     }
 
+    private void criaTabelaIdiomas(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE IF NOT EXISTS `idiomas` (\n" +
+                "  ID int(1) NOT NULL DEFAULT '0',\n" +
+                "  idioma varchar (100) DEFAULT NULL,\n" +
+                "  PRIMARY KEY (`ID`)\n" +
+                ")");
+    }
+
     private void popularTabelaPais(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO pais VALUES" +
+        db.execSQL("INSERT OR IGNORE INTO pais VALUES" +
 
 
                 "(1,'Afeganistão','Pachto / Dari','32225560','652090','Ásia',' Ásia central ',' Cabul ',' Cabul ','afegani','Afghanistan','do','no'), \n" +
@@ -449,7 +465,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
     private void popularTabelaCidades1(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO cidades VALUES" +
+        db.execSQL("INSERT OR IGNORE INTO cidades VALUES" +
                 "(1,1,'Candaar'),\n" +
                 "(2,1,'Herat'),\n" +
                 "(3,2,'Joanesburgo'),\n" +
@@ -704,7 +720,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
     private void popularTabelaCidades2(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO cidades VALUES" +
+        db.execSQL("INSERT OR IGNORE INTO cidades VALUES" +
                 "(251,87,'Bombaim'),\n" +
                 "(252,87,'Bangalor'),\n" +
                 "(253,87,'Haiderabade'),\n" +
@@ -942,7 +958,7 @@ public class Conexao extends SQLiteOpenHelper {
                 "(485,200,'Villa Nueva')");
     }
     private void popularTabelaCategorias(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `categorias` VALUES " +
+        db.execSQL("INSERT OR IGNORE INTO `categorias` VALUES " +
                 "(1,'capital',0,0)," +
                 "(2,'bandeira',0,0)," +
                 "(3,'idioma',0,0)," +
@@ -957,14 +973,14 @@ public class Conexao extends SQLiteOpenHelper {
     }
 
     private void popularTabelaHabilitaQtdPerguntas(SQLiteDatabase db){
-        db.execSQL("INSERT INTO `habilitaQtdPerguntas` " +
+        db.execSQL("INSERT OR IGNORE INTO `habilitaQtdPerguntas` " +
                 "VALUES " +
                 "(1,'Partidas de 15',1,0)," +
                 "(2,'Partidas de 30',0,10)," +
                 "(3,'Partidas de 50',0,10)\n");
     }
     private void popularTabelaAlternativas1(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `alternativas` VALUES(1,' Cabul ','1','0','0'),\n" +
+        db.execSQL("INSERT OR IGNORE INTO `alternativas` VALUES(1,' Cabul ','1','0','0'),\n" +
                 "(2,' Pretória ','1','0','0'),\n" +
                 "(3,' Tirana ','1','0','0'),\n" +
                 "(4,' Berlim ','1','0','0'),\n" +
@@ -1219,7 +1235,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
     private void popularTabelaAlternativas2(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `alternativas` VALUES" +
+        db.execSQL("INSERT OR IGNORE INTO `alternativas` VALUES" +
                 "(251,'Latim','3','0','0'),\n" +
                 "(252,'Letão','3','0','0'),\n" +
                 "(253,'Lituano','3','0','0')," +
@@ -1491,16 +1507,16 @@ public class Conexao extends SQLiteOpenHelper {
 
 
     private void popularTabelaParametros(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `parametros` VALUES (1,1,1);\n");
+        db.execSQL("INSERT INTO `parametros` VALUES (1,1,1,3,0,0);\n");
     }
     private void popularTabelaJogoPendente(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `jogopendente` VALUES (1,0);\n");
+        db.execSQL("INSERT OR IGNORE INTO `jogopendente` VALUES (1,0);\n");
     }
     private void popularTabelaQuantidadePerguntas(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `quantidadePerguntas` VALUES (1,15);\n");
+        db.execSQL("INSERT OR IGNORE INTO `quantidadePerguntas` VALUES (1,15);\n");
     }
     private void popularTabelaSequenciaVitorias(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `sequenciaVitorias` " +
+        db.execSQL("INSERT OR IGNORE INTO `sequenciaVitorias` " +
                 "VALUES " +
                 "(1,'Geral',0,0)," +
                 "(2,'Partidas de 15',0,0)," +
@@ -1509,7 +1525,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
     private void popularTabelaConquistas(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `conquistas` VALUES " +
+        db.execSQL("INSERT OR IGNORE INTO `conquistas` VALUES " +
                 "(1,'Geografo Junior',50,0,0,6)," +
                 "(2,'Geografo Pleno',120,0,0,6)," +
                 "(3,'Geografo Senior',196,0,0,6)," +
@@ -1543,7 +1559,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
     private void popularTabelaConquistasSemCategoria(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO `conquistas_sem_categorias` VALUES " +
+        db.execSQL("INSERT OR IGNORE INTO `conquistas_sem_categorias` VALUES " +
                 "(1,'Vença 1 partida',1,0)," +
                 "(2,'Vença 10 partidas',10,0)," +
                 "(3,'Vença 50 partidas',50,0)," +
@@ -1579,7 +1595,7 @@ public class Conexao extends SQLiteOpenHelper {
 
     }
     private void popularTabelaAcertosContinenes(SQLiteDatabase db) {
-        db.execSQL("INSERT INTO acertosContinentes VALUES" +
+        db.execSQL("INSERT OR IGNORE INTO acertosContinentes VALUES" +
                 "(1,'África',0),\n" +
                 "(2,'América',0),\n" +
                 "(3,'Ásia',0),\n" +
@@ -1588,10 +1604,19 @@ public class Conexao extends SQLiteOpenHelper {
     }
 
 
+    private void popularTabelaIdiomas(SQLiteDatabase db) {
+        db.execSQL("INSERT OR IGNORE INTO idiomas VALUES" +
+                "(1,'English'),\n" +
+                "(2,'Spanish'),\n" +
+                "(3,'Portuguese'),\n" +
+                "(4,'French')");
+    }
+
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-
+        onCreate(db);
 
     }
 }

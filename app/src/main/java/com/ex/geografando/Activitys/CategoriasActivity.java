@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ex.geografando.DAO.CategoriaDAO;
+import com.ex.geografando.DAO.ConquistasDAO;
 import com.ex.geografando.R;
 
 import java.util.List;
@@ -68,6 +69,14 @@ public class CategoriasActivity extends AppCompatActivity {
         verificaQuantidadeSelecionada();
         verificaQtdPerguntaHabilitada();
         verificaParametrosSelecionados();
+        verificaPendenciaVisualizacao();
+    }
+
+    private void verificaPendenciaVisualizacao() {
+        CategoriaDAO dao = new CategoriaDAO(this);
+        if(dao.verificaDesbloqueioCategoriaPendente()==1){
+            dao.atualizaCategoriaNAOPendente();
+        }
     }
 
     private void verificaQtdPerguntaHabilitada() {

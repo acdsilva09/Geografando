@@ -21,6 +21,17 @@ public class CategoriaDAO {
     }
 
 
+    public int verificaDesbloqueioCategoriaPendente(){
+        int pendente = 0;
+        Cursor cursor = banco.query("parametros", new String[]{"CATEGORIADESBLOQUEADA"},null,null,null,null,null);
+        while (cursor.moveToNext()){
+            pendente = cursor.getInt(0);
+        }
+        return pendente;
+    }
+
+
+
     public boolean consultaSelecaoCategoria(int codCategoria) {
 
         int selecionada = 0;
@@ -174,6 +185,7 @@ public class CategoriaDAO {
         ContentValues values = new ContentValues();
         values.put("habilitada",1);
         banco.update("categorias",values,"codCategoria="+cod,null);
+        atualizaCategoriaPendente();
     }
 
     public void atualizaParametros(int som, int vibra) {
@@ -275,4 +287,18 @@ public class CategoriaDAO {
             }
         }
     }
+
+
+    public void atualizaCategoriaPendente(){
+        ContentValues values = new ContentValues();
+        values.put("CATEGORIADESBLOQUEADA", 1);
+        banco.update("parametros",values,null,null);
+    }
+
+    public void atualizaCategoriaNAOPendente(){
+        ContentValues values = new ContentValues();
+        values.put("CATEGORIADESBLOQUEADA", 0);
+        banco.update("parametros",values,null,null);
+    }
+
 }

@@ -60,6 +60,15 @@ public class ConquistasDAO {
         return list;
     }
 
+    public int verificaDesbloqueioConquistaPendente(){
+        int pendente = 0;
+        Cursor cursor = banco.query("parametros", new String[]{"CONQUISTADESBLOQUEADA"},null,null,null,null,null);
+        while (cursor.moveToNext()){
+            pendente = cursor.getInt(0);
+        }
+        return pendente;
+    }
+
     public void consultaDesbloqueioConquista() {
         List<Integer> categorias = Arrays.asList(6,3,1,2,4,9,5,7,8,10);
         for(int a=0; a<categorias.size();a++){
@@ -103,6 +112,7 @@ public class ConquistasDAO {
                 ContentValues values = new ContentValues();
                 values.put("desbloqueio", 1);
                 banco.update("conquistas_sem_categorias",values,"ID="+conquistas.get(i).getID(),null);
+                atualizaConquistaPendente();
             }
             a++;
         }
@@ -135,6 +145,7 @@ public class ConquistasDAO {
                 ContentValues values = new ContentValues();
                 values.put("desbloqueio", 1);
                 banco.update("conquistas_sem_categorias",values,"ID="+conquistas.get(i).getID(),null);
+                atualizaConquistaPendente();
             }
         }
     }
@@ -155,6 +166,7 @@ public class ConquistasDAO {
                 ContentValues values = new ContentValues();
                 values.put("desbloqueio", 1);
                 banco.update("conquistas_sem_categorias",values,"ID="+conquistas.get(i).getID(),null);
+                atualizaConquistaPendente();
             }
         }
 
@@ -177,6 +189,7 @@ public class ConquistasDAO {
                 ContentValues values = new ContentValues();
                 values.put("desbloqueio", 1);
                 banco.update("conquistas_sem_categorias",values,"ID="+conquistas.get(i).getID(),null);
+                atualizaConquistaPendente();
             }
         }
 
@@ -198,8 +211,7 @@ public class ConquistasDAO {
         ContentValues values = new ContentValues();
         values.put("desbloqueio", habilita);
         banco.update("conquistas_sem_categorias",values,"ID=12",null);
-
-
+        atualizaConquistaPendente();
     }
 
     private void verificaDesbloqueioConquistaPartidasVencidasSemErros() {
@@ -235,6 +247,7 @@ public class ConquistasDAO {
         ContentValues values = new ContentValues();
         values.put("desbloqueio", 1);
         banco.update("conquistas_sem_categorias",values,"ID="+id,null);
+        atualizaConquistaPendente();
     }
 
     private ArrayList<Conquista> conquistasPorCategoria(ArrayList<Conquista> conquista, int categoria) {
@@ -263,6 +276,7 @@ public class ConquistasDAO {
         values.put("desbloqueio", 1);
         values.put("qtd_de_acertos", qtdAcertos);
         banco.update("conquistas",values,"ID="+id,null);
+        atualizaConquistaPendente();
     }
 
     public ArrayList<Conquista> consultaConquistasSemCategoria() {
@@ -295,5 +309,17 @@ public class ConquistasDAO {
         c1.close();
         c2.close();
         return qtd;
+    }
+
+    public void atualizaConquistaPendente(){
+        ContentValues values = new ContentValues();
+        values.put("CONQUISTADESBLOQUEADA", 1);
+        banco.update("parametros",values,null,null);
+    }
+
+    public void atualizaConquistaNAOPendente() {
+        ContentValues values = new ContentValues();
+        values.put("CONQUISTADESBLOQUEADA", 0);
+        banco.update("parametros",values,null,null);
     }
 }

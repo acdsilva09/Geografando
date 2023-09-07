@@ -107,7 +107,16 @@ public class ConquistasActivity extends AppCompatActivity {
         verificaConquistasDesbloqueadas(defineArrayCamposConquistas(),defineArrayProgressBar(), defineArrayTextViewProgressBar(), statusConquistas());
         verificaConquistasSemCategoriaDesbloqueadas(defineArrayCamposConquistasSemCategoria(),defineArrayProgressBarSemCategoria(), defineArrayTextViewProgressBarSemCategoria(), statusConquistasSemCategoria());
 
+        verificaPendenciaVisualizacao();
+
         escondeNavigationBar();
+    }
+
+    private void verificaPendenciaVisualizacao() {
+        ConquistasDAO dao = new ConquistasDAO(this);
+        if(dao.verificaDesbloqueioConquistaPendente()==1){
+            dao.atualizaConquistaNAOPendente();
+        }
     }
 
     private void verificaQtdConquistas() {
